@@ -3,11 +3,11 @@ name: QA Pipeline
 on:
   pull_request:
     branches:
-      - "**"
+      - develop
 
 jobs:
   smoke-tests:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 20
 
     steps:
@@ -15,7 +15,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # Configura Node.js
+      # Configura Node com cache do Yarn
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -26,14 +26,14 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile
 
-      # Executa testes Smoke com a aplicação em pé
+      # Executa somente a suíte Smoke
       - name: Run Cypress Smoke tests
-        uses: cypress-io/github-action@v6
+        uses: cypress-io/github-action@v7
         with:
           start: yarn dev
           wait-on: "http://localhost:3000"
           wait-on-timeout: 120
-          command: yarn cypress:run --spec "cypress/tests/candidate/e2e/smoke/**/*.spec.ts"
+          spec: cypress/tests/candidate/e2e/smoke/**/*.spec.ts
         env:
           SEED_DEFAULT_USER_PASSWORD: s3cret
 
