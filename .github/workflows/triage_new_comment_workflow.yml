@@ -1,8 +1,0 @@
-name: "Handle Comment Workflow"
-on:
-  workflow_dispatch:
-    
-jobs:
-  closed-issue-comment:
-    uses: cypress-io/cypress/.github/workflows/triage_handle_new_comments.yml@develop
-    secrets: inherit
