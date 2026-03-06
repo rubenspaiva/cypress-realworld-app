@@ -32,9 +32,7 @@ export class BankAccountsPage {
   }
 
   deleteBankAccount(bankName: string) {
-    cy.contains("li", bankName)
-      .find('[data-test="bankaccount-delete"]')
-      .click();
+    cy.contains("li", bankName).find('[data-test="bankaccount-delete"]').click();
   }
 
   validateBankAccountDeleted(bankName: string) {

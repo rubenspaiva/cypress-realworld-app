@@ -1,7 +1,9 @@
+import { LoginPage } from "../pages/login.page";
 import { HomePage } from "../pages/home.page";
 import { BankAccountsPage } from "../pages/bankAccounts.page";
 import { createBankAccountData } from "../factories/bankAccount.factory";
 
+const loginPage = new LoginPage();
 const homePage = new HomePage();
 const bankAccountsPage = new BankAccountsPage();
 
@@ -20,7 +22,8 @@ describe("Bank Account - criar e deletar", () => {
 
   it("deve criar e deletar uma conta bancária", () => {
     cy.get("@user").then((user: any) => {
-      cy.login(user.username);
+      // Realizar login
+      loginPage.login(user.username);
 
       //Criar dados da conta bancária
       const { bankName, routingNumber, accountNumber } = createBankAccountData();

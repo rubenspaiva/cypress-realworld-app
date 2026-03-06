@@ -1,7 +1,9 @@
+import { LoginPage } from "../pages/login.page";
 import { HomePage } from "../pages/home.page";
 import { TransactionsPage } from "../pages/transactions.page";
 import { createTransactionData } from "../factories/transaction.factory";
 
+const loginPage = new LoginPage();
 const homePage = new HomePage();
 const transactionsPage = new TransactionsPage();
 
@@ -15,7 +17,8 @@ describe("Transactions - enviar pagamento e validar no feed", () => {
 
   it("deve enviar pagamento e validar no feed", () => {
     cy.get("@sender").then((sender: any) => {
-      cy.login(sender.username);
+      // Realizar login
+      loginPage.login(sender.username);
 
       // Criar dados da transação
       const { amount, note } = createTransactionData();
@@ -30,7 +33,7 @@ describe("Transactions - enviar pagamento e validar no feed", () => {
         const users = data.users;
         const receiver = Cypress._.sample(users.filter((u: any) => u.username !== sender.username));
 
-        // Buscar e selecionar usuário destino 
+        // Buscar e selecionar usuário destino
         transactionsPage.searchUser(receiver.username);
         transactionsPage.selectUser(receiver.username);
 

@@ -1,3 +1,9 @@
+import { LoginPage } from "../../pages/login.page";
+import { HomePage } from "../../pages/home.page";
+
+const loginPage = new LoginPage();
+const homePage = new HomePage();
+
 describe("Login - Usuário válido (Smoke)", () => {
   beforeEach(() => {
     cy.clearCookies();
@@ -13,16 +19,12 @@ describe("Login - Usuário válido (Smoke)", () => {
 
   it("deve autenticar com credenciais válidas e acessar a aplicação", function () {
     cy.get("@user").then((user: any) => {
-      // Fazer login
-      cy.login(this.user.username);
+      // Realizar login
+      loginPage.login(user.username);
 
-      // Validar se logo da tela inicial aparece
-      cy.get('[data-test="app-name-logo"]', { timeout: 10000 }).should("be.visible");
-
-      // Validar se nome do usuário aparece no menu lateral
-      cy.get('[data-test="sidenav-user-full-name"]')
-        .should("be.visible")
-        .and("contain", this.user.firstName);
+      // Validar que o login foi bem-sucedido verificando elementos chave da home (logo e username)
+      homePage.validateAppLogoVisible();
+      homePage.validateLoggedUserName(user.firstName);
     });
   });
 });
