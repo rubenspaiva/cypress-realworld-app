@@ -1,3 +1,10 @@
+import { HomePage } from "../pages/home.page";
+import { BankAccountsPage } from "../pages/bankAccounts.page";
+import { createBankAccountData } from "../factories/bankAccount.factory";
+
+const homePage = new HomePage();
+const bankAccountsPage = new BankAccountsPage();
+
 describe("Bank Account - criar e deletar", () => {
   beforeEach(() => {
     cy.clearCookies();
@@ -15,28 +22,23 @@ describe("Bank Account - criar e deletar", () => {
     cy.get("@user").then((user: any) => {
       cy.login(user.username);
 
-      const bankName = `Bank ${Date.now()}`;
-      const routingNumber = Cypress._.random(100000000, 999999999).toString();
-      const accountNumber = Cypress._.random(100000000, 999999999).toString();
+      //Criar dados da conta bancária
+      const { bankName, routingNumber, accountNumber } = createBankAccountData();
 
       // Ir para tela de Bank Accounts
-      cy.get('[data-test="sidenav-bankaccounts"]').click();
-      cy.get('[data-test="bankaccount-new"]').click();
+      homePage.goToBankAccounts();
 
       // Criar Bank Account
-      cy.get("#bankaccount-bankName-input").type(bankName);
-      cy.get("#bankaccount-routingNumber-input").type(routingNumber);
-      cy.get("#bankaccount-accountNumber-input").type(accountNumber);
-      cy.get('[data-test="bankaccount-submit"]').click();
+      bankAccountsPage.createBankAccount(bankName, routingNumber, accountNumber);
 
       // Validar que a conta apareceu na lista
-      cy.contains(bankName).should("be.visible");
+      bankAccountsPage.validateBankAccountVisible(bankName);
 
       // Deletar a conta recém criada
-      cy.contains("li", bankName).find('[data-test="bankaccount-delete"]').click();
+      bankAccountsPage.deleteBankAccount(bankName);
 
       // Validar que a conta foi deletada
-      cy.contains("li", `${bankName} (Deleted)`).should("be.visible");
+      bankAccountsPage.validateBankAccountDeleted(bankName);
     });
   });
 });

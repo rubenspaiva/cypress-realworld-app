@@ -253,6 +253,17 @@
       "isDeleted": false,
       "createdAt": "2024-01-26T14:01:01.815Z",
       "modifiedAt": "2024-03-07T08:44:31.174Z"
+    },
+    {
+      "id": "7z3-wVeL6",
+      "uuid": "1780b256-fb5c-45e2-ba07-6b5bdfcd677a",
+      "userId": "WHjJ4qR2R2",
+      "bankName": "Bank 1772831386131",
+      "accountNumber": "653101287",
+      "routingNumber": "132225425",
+      "isDeleted": true,
+      "createdAt": "2026-03-06T21:09:51.752Z",
+      "modifiedAt": "2026-03-06T21:09:51.752Z"
     }
   ],
   "transactions": [
