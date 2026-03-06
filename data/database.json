@@ -26,7 +26,7 @@
       "phoneNumber": "410-786-2112",
       "avatar": "https://avatars.dicebear.com/api/human/GjWovtg2hr.svg",
       "defaultPrivacyLevel": "private",
-      "balance": 93026,
+      "balance": 89426,
       "createdAt": "2023-04-23T13:52:10.979Z",
       "modifiedAt": "2024-03-07T09:07:46.709Z"
     },
@@ -56,7 +56,7 @@
       "phoneNumber": "467-316-5352",
       "avatar": "https://avatars.dicebear.com/api/human/M1ty1gR8B3.svg",
       "defaultPrivacyLevel": "private",
-      "balance": 117683,
+      "balance": 121283,
       "createdAt": "2024-02-08T11:33:03.159Z",
       "modifiedAt": "2024-03-07T16:44:43.874Z"
     },
@@ -253,17 +253,6 @@
       "isDeleted": false,
       "createdAt": "2024-01-26T14:01:01.815Z",
       "modifiedAt": "2024-03-07T08:44:31.174Z"
-    },
-    {
-      "id": "7z3-wVeL6",
-      "uuid": "1780b256-fb5c-45e2-ba07-6b5bdfcd677a",
-      "userId": "WHjJ4qR2R2",
-      "bankName": "Bank 1772831386131",
-      "accountNumber": "653101287",
-      "routingNumber": "132225425",
-      "isDeleted": true,
-      "createdAt": "2026-03-06T21:09:51.752Z",
-      "modifiedAt": "2026-03-06T21:09:51.752Z"
     }
   ],
   "transactions": [
@@ -9866,6 +9855,18 @@
       "requestResolvedAt": "",
       "createdAt": "2023-11-10T07:15:28.127Z",
       "modifiedAt": "2024-03-07T21:58:09.668Z"
+    },
+    {
+      "id": "Ob-mKeqgm",
+      "uuid": "7abbc15b-1166-493c-8929-c02a4293b841",
+      "amount": 3600,
+      "description": "Payment 1772832283495",
+      "receiverId": "M1ty1gR8B3",
+      "senderId": "GjWovtg2hr",
+      "privacyLevel": "private",
+      "status": "complete",
+      "createdAt": "2026-03-06T21:24:47.098Z",
+      "modifiedAt": "2026-03-06T21:24:47.098Z"
     }
   ],
   "likes": [
@@ -10442,6 +10443,16 @@
       "isRead": false,
       "createdAt": "2024-02-01T18:53:45.699Z",
       "modifiedAt": "2024-03-07T17:13:52.110Z"
+    },
+    {
+      "id": "pce2oKTgAT",
+      "uuid": "47d5a221-375a-4702-ae24-7fe1cc356fb8",
+      "userId": "M1ty1gR8B3",
+      "transactionId": "Ob-mKeqgm",
+      "status": "received",
+      "isRead": false,
+      "createdAt": "2026-03-06T21:24:47.108Z",
+      "modifiedAt": "2026-03-06T21:24:47.108Z"
     }
   ],
   "banktransfers": [
