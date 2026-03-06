@@ -34,8 +34,7 @@ describe("Transactions - enviar pagamento e validar no feed", () => {
         const receiver = Cypress._.sample(users.filter((u: any) => u.username !== sender.username));
 
         // Buscar e selecionar usuário destino
-        transactionsPage.searchUser(receiver.username);
-        transactionsPage.selectUser(receiver.username);
+        transactionsPage.searchAndSelectUser(receiver.username);
 
         // Preencher e enviar pagamento
         transactionsPage.fillPayment(amount, note);
@@ -49,7 +48,7 @@ describe("Transactions - enviar pagamento e validar no feed", () => {
 
         // Voltar para feed e validar
         homePage.goToHomeFeed();
-        homePage.openPersonalTab();
+        homePage.openFeedTab("personal");
         transactionsPage.validateTransactionInFeed(note);
       });
     });

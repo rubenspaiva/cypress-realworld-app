@@ -35,13 +35,13 @@ describe("Bank Account - criar e deletar", () => {
       bankAccountsPage.createBankAccount(bankName, routingNumber, accountNumber);
 
       // Validar que a conta apareceu na lista
-      bankAccountsPage.validateBankAccountVisible(bankName);
+      bankAccountsPage.validateBankAccount(bankName);
 
       // Deletar a conta recém criada
       bankAccountsPage.deleteBankAccount(bankName);
 
       // Validar que a conta foi deletada
-      bankAccountsPage.validateBankAccountDeleted(bankName);
+      bankAccountsPage.validateBankAccount(bankName, "deleted");
     });
   });
 });

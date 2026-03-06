@@ -11,7 +11,7 @@
       "phoneNumber": "398-225-9900",
       "avatar": "https://avatars.dicebear.com/api/human/uBmeaz5pX.svg",
       "defaultPrivacyLevel": "public",
-      "balance": 148953,
+      "balance": 150953,
       "createdAt": "2023-03-09T22:26:40.101Z",
       "modifiedAt": "2024-03-07T10:07:57.580Z"
     },
@@ -26,7 +26,7 @@
       "phoneNumber": "410-786-2112",
       "avatar": "https://avatars.dicebear.com/api/human/GjWovtg2hr.svg",
       "defaultPrivacyLevel": "private",
-      "balance": 93026,
+      "balance": 90626,
       "createdAt": "2023-04-23T13:52:10.979Z",
       "modifiedAt": "2024-03-07T09:07:46.709Z"
     },
@@ -71,7 +71,7 @@
       "phoneNumber": "990-583-8419",
       "avatar": "https://avatars.dicebear.com/api/human/WHjJ4qR2R2.svg",
       "defaultPrivacyLevel": "public",
-      "balance": 51474,
+      "balance": 51874,
       "createdAt": "2023-12-07T04:39:38.383Z",
       "modifiedAt": "2024-03-07T00:07:36.510Z"
     }
@@ -9857,16 +9857,16 @@
       "modifiedAt": "2024-03-07T21:58:09.668Z"
     },
     {
-      "id": "nHOMy1gx3",
-      "uuid": "405f5553-3cd0-49c6-b10c-f2c041576f14",
-      "amount": 2000,
-      "description": "Payment 1772833458528",
+      "id": "T7lhAhTVu",
+      "uuid": "c8c437e4-4733-4348-98c2-e180c5deb903",
+      "amount": 2400,
+      "description": "Payment 1772834021879",
       "receiverId": "WHjJ4qR2R2",
-      "senderId": "uBmeaz5pX",
-      "privacyLevel": "public",
+      "senderId": "GjWovtg2hr",
+      "privacyLevel": "private",
       "status": "complete",
-      "createdAt": "2026-03-06T21:44:22.800Z",
-      "modifiedAt": "2026-03-06T21:44:22.800Z"
+      "createdAt": "2026-03-06T21:53:45.071Z",
+      "modifiedAt": "2026-03-06T21:53:45.071Z"
     }
   ],
   "likes": [
@@ -10445,14 +10445,14 @@
       "modifiedAt": "2024-03-07T17:13:52.110Z"
     },
     {
-      "id": "ob2AodCjcA",
-      "uuid": "bef7bf3f-0721-474c-9c7f-28bcf9cf0f5d",
+      "id": "vq-gdFptIP",
+      "uuid": "f3137a59-8a75-4081-beea-e97e683062a8",
       "userId": "WHjJ4qR2R2",
-      "transactionId": "nHOMy1gx3",
+      "transactionId": "T7lhAhTVu",
       "status": "received",
       "isRead": false,
-      "createdAt": "2026-03-06T21:44:22.838Z",
-      "modifiedAt": "2026-03-06T21:44:22.838Z"
+      "createdAt": "2026-03-06T21:53:45.111Z",
+      "modifiedAt": "2026-03-06T21:53:45.111Z"
     }
   ],
   "banktransfers": [

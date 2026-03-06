@@ -35,7 +35,10 @@ export class BankAccountsPage {
     cy.contains("li", bankName).find('[data-test="bankaccount-delete"]').click();
   }
 
-  validateBankAccountDeleted(bankName: string) {
-    cy.contains("li", `${bankName} (Deleted)`).should("be.visible");
-  }
+validateBankAccount(bankName: string, status: "active" | "deleted" = "active") {
+  const expectedText =
+    status === "deleted" ? `${bankName} (Deleted)` : bankName;
+
+  cy.contains("li", expectedText).should("be.visible");
+}
 }

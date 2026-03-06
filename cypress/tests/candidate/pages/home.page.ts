@@ -8,13 +8,9 @@ export class HomePage {
     personalTab: () => cy.get('[data-test="nav-personal-tab"]'),
   };
 
-  // Validar que o logo do app é exibido no header
-  validateAppLogoVisible() {
+  // Validar que o usuário está logado verificando a presença do logo e do nome
+  validateUserLogged(firstName: string) {
     this.elements.appLogo().should("be.visible");
-  }
-
-  // Validar que o nome do usuário logado aparece na sidebar
-  validateLoggedUserName(firstName: string) {
     this.elements.sidenavUserFullName().should("be.visible").and("contain", firstName);
   }
 
@@ -33,8 +29,8 @@ export class HomePage {
     this.elements.sidenavHomeButton().click();
   }
 
-  // Abre a tab pessoal do feed
-  openPersonalTab() {
-    this.elements.personalTab().click();
-  }
+  // Abre a tab no feed
+  openFeedTab(tab: "personal") {
+  cy.get(`[data-test="nav-${tab}-tab"]`).click();
+}
 }

@@ -23,8 +23,7 @@ describe("Login - Usuário válido (Smoke)", () => {
       loginPage.login(user.username);
 
       // Validar que o login foi bem-sucedido verificando elementos chave da home (logo e username)
-      homePage.validateAppLogoVisible();
-      homePage.validateLoggedUserName(user.firstName);
+      homePage.validateUserLogged(user.firstName);
     });
   });
 });

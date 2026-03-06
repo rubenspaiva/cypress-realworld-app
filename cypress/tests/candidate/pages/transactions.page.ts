@@ -6,11 +6,8 @@ export class TransactionsPage {
     submitPaymentButton: () => cy.get('[data-test="transaction-create-submit-payment"]'),
   };
 
-  searchUser(username: string) {
+  searchAndSelectUser(username: string) {
     this.elements.userSearchInput().type(username);
-  }
-
-  selectUser(username: string) {
     cy.contains(username).click();
   }
 
